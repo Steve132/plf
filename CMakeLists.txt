@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 
 project(plf)
 
@@ -26,6 +26,13 @@ target_sources(plf INTERFACE
 target_compile_features(plf INTERFACE cxx_std_20)
 
 if(PROJECT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+	function(plf_add_test SRCNAME SRC)
+		message(STATUS "Adding test ${SRCNAME}: ${SRC}")
+		add_executable(${SRCNAME} ${SRC})
+		target_link_libraries(${SRCNAME} PRIVATE plf)
+		add_test(${SRCNAME}_test COMMAND ${SRCNAME})
+	endfunction()
+
 	add_subdirectory(benchmark)
 	add_subdirectory(test)
 endif()

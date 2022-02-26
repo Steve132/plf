@@ -66,7 +66,7 @@
 
   
  
- inline PLF_BENCH_FORCE_INLINE void benchmark_referencer_percentage_packed_deque(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const unsigned int erasure_percentage)
+PLF_BENCH_FORCE_INLINE void benchmark_referencer_percentage_packed_deque(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const unsigned int erasure_percentage)
  {
  	assert (number_of_elements > 1);
  
@@ -262,7 +262,7 @@
  
  
  
- inline PLF_BENCH_FORCE_INLINE void benchmark_referencer_small_percentage_packed_deque(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const double erasure_percentage)
+PLF_BENCH_FORCE_INLINE void benchmark_referencer_small_percentage_packed_deque(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const double erasure_percentage)
  {
  	assert (number_of_elements > 1);
  

@@ -63,7 +63,7 @@
  
  
  
- inline PLF_BENCH_FORCE_INLINE void benchmark_referencer_percentage_colony(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const unsigned int erasure_percentage)
+PLF_BENCH_FORCE_INLINE void benchmark_referencer_percentage_colony(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const unsigned int erasure_percentage)
  {
  	const unsigned int total_number_of_insertions = static_cast<unsigned int>((static_cast<double>(number_of_elements) * (static_cast<double>(erasure_percentage) / 100.0)) + 0.5);
  	const unsigned int erasure_percent_expanded = static_cast<unsigned int>((static_cast<double>(erasure_percentage) * 1.28) + 0.5);
@@ -256,7 +256,7 @@
  
  
  
- inline PLF_BENCH_FORCE_INLINE void benchmark_referencer_small_percentage_colony(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const double erasure_percentage)
+PLF_BENCH_FORCE_INLINE void benchmark_referencer_small_percentage_colony(const unsigned int number_of_elements, const unsigned int number_of_runs, const unsigned int number_of_cycles, const double erasure_percentage)
  {
  	assert (number_of_elements > 1);
  

@@ -1372,7 +1372,13 @@ PLF_BENCH_FORCE_INLINE unsigned int memory(container_type &container)
 	return static_cast<unsigned int>(container.memory());
 }
 
-
+template <class container_contents_key,class container_contents_value>
+PLF_BENCH_FORCE_INLINE unsigned int memory(std::map<container_contents_key,container_contents_value> &container)
+{
+	return static_cast<unsigned int>(sizeof(container)+container.size()*
+		(sizeof(container_contents_key)+sizeof(container_contents_value))
+	);
+}
 
 template<class container_contents>
 PLF_BENCH_FORCE_INLINE unsigned int memory(std::list<container_contents> &list)

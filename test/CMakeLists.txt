@@ -1,14 +1,5 @@
-add_executable(plf_colony_test_suite plf_colony_test_suite.cpp)
-target_link_libraries(plf_colony_test_suite PRIVATE plf)
-
-add_executable(plf_hive_test_suite plf_hive_test_suite.cpp)
-target_link_libraries(plf_hive_test_suite PRIVATE plf)
-
-add_executable(plf_list_test_suite plf_list_test_suite.cpp)
-target_link_libraries(plf_list_test_suite PRIVATE plf)
-
-add_executable(plf_queue_test_suite plf_queue_test_suite.cpp)
-target_link_libraries(plf_queue_test_suite PRIVATE plf)
-
-add_executable(plf_stack_test_suite plf_stack_test_suite.cpp)
-target_link_libraries(plf_stack_test_suite PRIVATE plf)
+plf_add_test(plf_colony_test_suite plf_colony_test_suite.cpp)
+plf_add_test(plf_hive_test_suite plf_hive_test_suite.cpp)
+plf_add_test(plf_list_test_suite plf_list_test_suite.cpp)
+plf_add_test(plf_queue_test_suite plf_queue_test_suite.cpp)
+plf_add_test(plf_stack_test_suite plf_stack_test_suite.cpp)

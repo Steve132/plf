@@ -25,7 +25,7 @@ struct small_struct
 // MATH FUNCTIONS:
 
 // Fast xorshift+128 random number generator function (original: https://codingforspeed.com/using-faster-psudo-random-generator-xorshift/)
-unsigned int plf::pcg_rand()
+unsigned int bench_pcg_rand()
 {
 	static unsigned int x = 123456789;
 	static unsigned int y = 362436069;
@@ -54,7 +54,7 @@ inline unsigned int fast_mod(const unsigned int input, const unsigned int ceilin
 
 inline unsigned int rand_within(const unsigned int range)
 {
-	return fast_mod(plf::pcg_rand(), range);
+	return fast_mod(bench_pcg_rand(), range);
 }
 
 
@@ -82,7 +82,7 @@ void benchmark_general_use_percentage(const unsigned int number_of_elements, con
 
 		for (unsigned int element_number = 0; element_number != number_of_elements; ++element_number)
 		{
-			container.insert(plf::pcg_rand() & 255);
+			container.insert(bench_pcg_rand() & 255);
 		}
 
 		for (unsigned int cycle = 0; cycle != number_of_cycles; ++cycle)
@@ -102,7 +102,7 @@ void benchmark_general_use_percentage(const unsigned int number_of_elements, con
 
 			for (unsigned int number_of_insertions = 0; number_of_insertions != total_number_of_insertions; ++number_of_insertions)
 			{
-				container.insert(plf::pcg_rand() & 255);
+				container.insert(bench_pcg_rand() & 255);
 			}
 		}
 
@@ -123,7 +123,7 @@ void benchmark_general_use_percentage(const unsigned int number_of_elements, con
 
 		for (unsigned int element_number = 0; element_number != number_of_elements; ++element_number)
 		{
-			container.insert(plf::pcg_rand() & 255);
+			container.insert(bench_pcg_rand() & 255);
 		}
 
 		for (unsigned int cycle = 0; cycle != number_of_cycles; ++cycle)
@@ -143,7 +143,7 @@ void benchmark_general_use_percentage(const unsigned int number_of_elements, con
 
 			for (unsigned int number_of_insertions = 0; number_of_insertions != total_number_of_insertions; ++number_of_insertions)
 			{
-				container.insert(plf::pcg_rand() & 255);
+				container.insert(bench_pcg_rand() & 255);
 			}
 		}
 	}
